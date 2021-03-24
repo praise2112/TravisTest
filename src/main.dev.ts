@@ -77,6 +77,15 @@ const createWindow = async () => {
     },
   });
 
+  // Make window stay over any app
+  // if (process.platform === 'darwin') {
+  //   app.dock.hide();
+  // }
+  // mainWindow.setSkipTaskbar(true)
+  mainWindow.setAlwaysOnTop(true, 'floating');
+  mainWindow.setVisibleOnAllWorkspaces(true);
+  mainWindow.setFullScreenable(false);
+
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   // @TODO: Use 'ready-to-show' event
